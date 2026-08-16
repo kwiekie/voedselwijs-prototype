@@ -1,0 +1,7 @@
+"use client";
+import { useState } from "react";
+
+export default function Home() {
+  const [scanned, setScanned] = useState(false);
+  return <main className="phone"><header><span className="logo">voedselwijs</span><span className="avatar">🌿</span></header>{!scanned ? <section className="welcome"><h1>Wat zit er<br/>eigenlijk in?</h1><p>Fotografeer een verpakking. Wij maken de ingrediënten begrijpelijk én geven advies dat bij jou past.</p><button className="scan" onClick={() => setScanned(true)} aria-label="Maak een productfoto"><span>⌁</span><small>TIK OM EEN ETIKET TE FOTOGRAFEREN</small></button><div className="hint"><b>i</b><span>Jouw profiel: vegetarisch · minder suiker · pinda-allergie.</span></div></section> : <section className="result"><div className="product"><div className="jar"/><div><h2>100% Pindakaas</h2><p>Calvé · 350 g · herkend via etiket</p></div></div><article className="verdict"><small>JOUW PERSOONLIJKE OORDEEL</small><h3>Een goede keuze,<br/>met één duidelijke waarschuwing.</h3><p>Vegetarisch en zonder toegevoegde suiker. Bevat wel pinda&apos;s en is daarom niet veilig voor jouw allergie.</p><div className="chips"><span>✓ vegetarisch</span><span>✓ geen E-nummers</span><span className="warning">! bevat pinda</span></div></article><button className="again" onClick={() => setScanned(false)}>← Nog een product scannen</button></section>}<nav><span className="active">⌁<b>Scan</b></span><span>◫<b>Historie</b></span><span>☻<b>Profiel</b></span></nav></main>;
+}
